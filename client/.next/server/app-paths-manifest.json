@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/Pages/ARecord/page": "app/Pages/ARecord/page.js",
+  "/Pages/AAAA/page": "app/Pages/AAAA/page.js",
+  "/Pages/MX/page": "app/Pages/MX/page.js",
+  "/Pages/NS/page": "app/Pages/NS/page.js",
+  "/Pages/SRV/page": "app/Pages/SRV/page.js",
+  "/Pages/SOA/page": "app/Pages/SOA/page.js",
+  "/Pages/TXT/page": "app/Pages/TXT/page.js",
+  "/Register/page": "app/Register/page.js",
+  "/forgot-password/page": "app/forgot-password/page.js",
+  "/login/page": "app/login/page.js",
+  "/Pages/CNAME/page": "app/Pages/CNAME/page.js",
+  "/page": "app/page.js"
+}
