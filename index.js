@@ -40,13 +40,16 @@ app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'))
 })*/
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, '../client/.next')));
+app.use(express.static(path.join(__dirname, '/client/.next')));
+
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/.next/server/app/index.html'));
+    res.sendFile(path.join(__dirname, '/client/.next/server/app/index.html'));
 });
 
 
 
 app.listen(port, () => {
+    console.log(path.join(__dirname, '/client/.next'));
+    console.log(path.join(__dirname, '/client/.next/server/app/index.html'));
     console.log(`Server running on port ${port}`);
 });
