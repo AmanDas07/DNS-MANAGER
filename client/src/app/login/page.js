@@ -49,7 +49,7 @@ const Login = () => {
             Router.push("/");
         }
         catch (error) {
-            toast.error(error.response.data);
+            toast.error(error.response);
             setLoading(false);
         }
 
