@@ -25,10 +25,12 @@ const UpdateCNAMERecordForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateCNAMERecord`, { ...formValues });
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/updateCNAMERecord`, { ...formValues });
             if (response.data.result) {
                 toast.success(response.data.message);
                 Router.push("/");
+            } else {
+                toast.error(response.data.message);
             }
         } catch (error) {
             toast.error("Failed to update CNAME Record");
