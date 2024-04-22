@@ -27,7 +27,7 @@ const UpdateSRVRecordForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/updateSRVRecord`, { ...formValues });
+            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateSRVRecord`, { ...formValues });
             if (data.success) {
                 toast.success(data.message);
                 router.push('/');
