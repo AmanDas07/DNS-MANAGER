@@ -22,7 +22,7 @@ const UpdateNSRecordForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/updateNSRecord`, { ...formValues });
+            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateNSRecord`, { ...formValues });
             if (data.success) {
                 toast.success(data.message);
                 router.push('/');
