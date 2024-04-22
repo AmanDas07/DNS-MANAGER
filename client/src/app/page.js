@@ -56,7 +56,7 @@ const Home = () => {
       const emailMatch = record.data.email ? record.data.email.toLowerCase().includes(searchTerm.toLowerCase()) : false;
       const targetMatch = record.data.target ? record.data.target.toLowerCase().includes(searchTerm.toLowerCase()) : false;
 
-      return hostMatch || emailMatch || targetMatch;
+      return  emailMatch || targetMatch; /*hostMatch ||*/
     });
 
     if (searchTerm) {
