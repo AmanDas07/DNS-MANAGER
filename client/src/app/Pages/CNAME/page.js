@@ -25,7 +25,7 @@ const UpdateCNAMERecordForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/updateCNAMERecord`, { ...formValues });
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateCNAMERecord`, { ...formValues });
             if (response.data.result) {
                 toast.success(response.data.message);
                 Router.push("/");
