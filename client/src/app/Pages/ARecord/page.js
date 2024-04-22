@@ -25,7 +25,7 @@ const UpdateARecordForm = () => {
         console.log(formValues.domainName);
         try {
 
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/updateARecord`, { ...formValues });
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateARecord`, { ...formValues });
             if (response.data) {
                 toast.success(response.data.message);
                 Router.push("/");
