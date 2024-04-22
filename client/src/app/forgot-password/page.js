@@ -24,7 +24,7 @@ const ForgotPassword = () => {
 
         try {
             setLoading(true);
-            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/forgotPassword`, {
+            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/auth/forgotPassword`, {
                 email,
                 newPassword
             });
