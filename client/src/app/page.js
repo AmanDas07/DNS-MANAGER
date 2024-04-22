@@ -19,7 +19,7 @@ const Home = () => {
     console.log(recordType, recordSetName);
     try {
 
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/deleteRecord`, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/deleteRecord`, {
         recordType,
         recordSetName,
         dnsZoneName: 'Hllog.com',
@@ -37,7 +37,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/verifyDomain`, {
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/verifyDomain`, {
         domainName: '90amandasgmail.onmicrosoft.com'
       }, {
         headers: {
