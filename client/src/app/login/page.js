@@ -33,7 +33,7 @@ const Login = () => {
 
         try {
             setLoading(true);
-            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/Login`, {
+            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/auth/Login`, {
                 email,
                 password,
 
