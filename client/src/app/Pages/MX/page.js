@@ -23,7 +23,7 @@ const UpdateMXRecordForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/updateMXRecord`, { ...formValues });
+            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateMXRecord`, { ...formValues });
             if (data.success) {
                 toast.success(data.message);
                 router.push('/');
