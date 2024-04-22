@@ -19,7 +19,7 @@ const Home = () => {
     console.log(recordType, recordSetName);
     try {
 
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/deleteRecord`, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/deleteRecord`, {
         recordType,
         recordSetName,
         dnsZoneName: 'Hllog.com',
@@ -37,7 +37,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/verifyDomain`, {
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/verifyDomain`, {
         domainName: '90amandasgmail.onmicrosoft.com'
       }, {
         headers: {
@@ -166,24 +166,28 @@ const Home = () => {
                 ttl = record.data.ttl;
                 break;
               case 'AAAA':
-                name = record.data.host;
-                value = record.data.ipv6;
+                name = record.name;
+                value = record.data[0].ipv6Address;
                 ttl = record.data.ttl;
                 break;
               case 'TXT':
-                name = record.data.host;
-                value = record.data.text;
+                name = record.name;
+                value = record.data.name;
                 ttl = record.data.ttl;
                 break;
               case 'CNAME':
-                name = record.data.alias;
+                name = record.data.cname;
                 value = record.data.target;
                 ttl = record.data.ttl;
                 break;
+              case 'MX':
+                name = record.name;
+                value = record.data[0].exchange;
+                break;
               case 'SRV':
-                name = record.data.service + '.' + record.data.protocol;
-                value = `Priority: ${record.data.priority}, Weight: ${record.data.weight}, Port: ${record.data.port}, Target: ${record.data.target}`;
-                ttl = record.data.ttl;
+                name = record.name;
+                value = 'N/A';
+                ttl = 'N/A';
                 break;
               default:
                 name = 'Unknown';
