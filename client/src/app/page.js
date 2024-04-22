@@ -52,6 +52,7 @@ const Home = () => {
 
   useEffect(() => {
     const filteredRecords = records.filter(record => {
+       /*const hostMatch = record.data.host ? record.data.host.toLowerCase().includes(searchTerm.toLowerCase()) : false;*/
       const emailMatch = record.data.email ? record.data.email.toLowerCase().includes(searchTerm.toLowerCase()) : false;
       const targetMatch = record.data.target ? record.data.target.toLowerCase().includes(searchTerm.toLowerCase()) : false;
 
