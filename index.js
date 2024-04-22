@@ -13,7 +13,7 @@ const port = process.env.PORT || 4000;
 
 
 app.use(cors({
-    origin: 'https://main--bright-starburst-6cac81.netlify.app/' 
+    origin: 'https://main--bright-starburst-6cac81.netlify.app' 
 }));
 app.use(express.json());
 app.use(morgan("dev"));
