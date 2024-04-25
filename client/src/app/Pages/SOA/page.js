@@ -26,7 +26,7 @@ const UpdateSOARecordForm = () => {
         e.preventDefault();
         try {
             const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateSOARecord`, { ...formValues });
-            if (response.data.result) {
+            if (response) {
                 toast.success(response.data.message);
                 router.push("/");
             } else {
