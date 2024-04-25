@@ -227,14 +227,19 @@ const Home = () => {
               <div className="modal-header">
                 <h5 className="modal-title">Select Record Type</h5>
                 {' '}
-                <button
+                  <button
                   type="button"
-                  className="close btn-danger"
+                  className="close btn btn-outline-danger"
                   onClick={() => setShowRecordTypeModal(false)}
-                  style={{ marginLeft: '10px', boxShadow: 'initial', borderRadius: '2px' }}
+                  style={{
+                    marginLeft: 'auto',
+                    padding: '0.5rem 1rem',
+                    boxShadow: 'none',
+                    borderRadius: '0.5rem',
+                    fontSize: '1rem',
+                    lineHeight: '1'
+                  }}
                 >
-                  <span aria-hidden="true">&times;</span>
-                </button>
               </div>
               <div className="modal-body">
                 <div className="list-group">
