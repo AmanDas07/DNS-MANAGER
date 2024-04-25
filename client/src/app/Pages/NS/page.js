@@ -22,12 +22,12 @@ const UpdateNSRecordForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateNSRecord`, { ...formValues });
-            if (data.success) {
-                toast.success(data.message);
-                router.push('/');
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API}/dns/updateNSRecord`, { ...formValues });
+             if (response.data.result) {
+                toast.success(response.data.message);
+                router.push("/");
             } else {
-                toast.error(data.message);
+                toast.error(response.data.message);
             }
         } catch (error) {
             toast.error('Failed to update NS Record');
