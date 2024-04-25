@@ -227,7 +227,7 @@ const Home = () => {
               <div className="modal-header">
                 <h5 className="modal-title">Select Record Type</h5>
                 {' '}
-                  <button
+              <button
                   type="button"
                   className="close btn btn-outline-danger"
                   onClick={() => setShowRecordTypeModal(false)}
@@ -240,6 +240,8 @@ const Home = () => {
                     lineHeight: '1'
                   }}
                 >
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
               <div className="modal-body">
                 <div className="list-group">
